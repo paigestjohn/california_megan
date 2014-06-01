@@ -82,7 +82,7 @@ def fetchcounty(page,county):
              else:
                  for offender in result['offenders']:
                      offender['lookupcounty'] = county
-                     # offender['address'] = offender['address'].rstrip('Show On Map')
+                     offender['address'] = offender['address'].rstrip('Show On Map')
                      scraperwiki.sqlite.save(unique_keys=["uniqueid"], data=offender)   
          except TypeError:
              break
